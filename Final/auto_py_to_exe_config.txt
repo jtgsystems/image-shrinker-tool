@@ -1,0 +1,18 @@
+# Auto-py-to-exe Configuration
+# GUI tool for creating executables
+
+# Install
+pip install auto-py-to-exe
+
+# Launch GUI
+auto-py-to-exe
+
+# Configuration settings for Image Shrinker:
+# Script Location: shrink.py
+# Onefile: Yes
+# Console Window: Window Based (hide console)
+# Icon: assets/icon.ico
+# Additional Files: theme_manager.py
+# Hidden Imports: PyQt6, PIL, qdarktheme, qt_material
+# Exclude Modules: tkinter, matplotlib, numpy
+# Output Directory: dist

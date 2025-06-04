@@ -1,0 +1,8 @@
+# Requirements for PyInstaller build
+PyQt6>=6.4.0
+Pillow>=10.0.0
+pillow-heif>=0.10.0
+pyqtdarktheme>=2.1.0
+qt-material>=2.14
+PyInstaller>=5.13.0
+auto-py-to-exe>=2.40.0

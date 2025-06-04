@@ -1,0 +1,23 @@
+# Simple PyInstaller Build
+# For quick executable creation
+
+# Windows
+pyinstaller --onefile --windowed --name "ImageShrinker" --icon assets/icon.ico shrink.py
+
+# macOS  
+pyinstaller --onefile --windowed --name "ImageShrinker" --icon assets/icon.icns shrink.py
+
+# Linux
+pyinstaller --onefile --windowed --name "ImageShrinker" shrink.py
+
+# Add data files
+--add-data "theme_manager.py:."
+
+# Hide console
+--noconsole
+
+# Optimize size
+--exclude-module tkinter --exclude-module matplotlib --exclude-module numpy
+
+# Include hidden imports
+--hidden-import PyQt6 --hidden-import PIL --hidden-import qdarktheme --hidden-import qt_material
