@@ -1,3 +1,5 @@
+![Banner](banner.png)
+
 # 🖼️ Enhanced Image Shrinker v2.0
 
 **A Professional Cross-Platform Image Compression Tool**
