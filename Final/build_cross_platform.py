@@ -5,7 +5,6 @@ Cross-Platform Build Script for Image Shrinker
 Builds executable for Windows, macOS, and Linux with smart Python detection
 """
 
-import os
 import sys
 import shutil
 import subprocess
@@ -61,14 +60,14 @@ def find_working_python():
                     if pip_result.returncode == 0:
                         print(f"✅ Found working system Python: {python_path}")
                         return python_path
-            except:
+            except (subprocess.TimeoutExpired, subprocess.CalledProcessError, FileNotFoundError):
                 pass
-        
+
         # Try python3
         python3_path = sh.which("python3")
         if python3_path:
             try:
-                result = subprocess.run([python3_path, "--version"], 
+                result = subprocess.run([python3_path, "--version"],
                                       capture_output=True, text=True, timeout=10)
                 if result.returncode == 0:
                     pip_result = subprocess.run([python3_path, "-m", "pip", "--version"],
@@ -76,9 +75,9 @@ def find_working_python():
                     if pip_result.returncode == 0:
                         print(f"✅ Found working Python3: {python3_path}")
                         return python3_path
-            except:
+            except (subprocess.TimeoutExpired, subprocess.CalledProcessError, FileNotFoundError):
                 pass
-    except:
+    except (AttributeError, ImportError):
         pass
     
     print("❌ No working Python installation with pip found!")

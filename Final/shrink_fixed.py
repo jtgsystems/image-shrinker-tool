@@ -8,7 +8,7 @@ Backward-compatible version that works with both PyQt5 and PyQt6
 import sys
 import os
 from pathlib import Path
-from typing import List, Tuple, Optional, Union
+from typing import Optional
 
 # Try PyQt6 first, fall back to PyQt5
 try:
@@ -37,7 +37,6 @@ except ImportError:
     sys.exit(1)
 
 import logging
-from concurrent.futures import ProcessPoolExecutor, as_completed
 
 # Setup logging
 logging.basicConfig(
@@ -265,7 +264,7 @@ class SimpleImageGUI(QMainWindow):
             QApplication.processEvents()
         
         # Show results
-        message = f"Processing complete!\n\n"
+        message = "Processing complete!\n\n"
         message += f"✅ Processed: {processed} images\n"
         if failed > 0:
             message += f"❌ Failed: {failed} images\n"

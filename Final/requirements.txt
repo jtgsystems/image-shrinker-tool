@@ -1,0 +1,14 @@
+# Enhanced Image Shrinker - Runtime Dependencies
+# ===============================================
+# Core dependencies required to run the application
+
+# GUI Framework
+PyQt6>=6.4.0
+
+# Image Processing
+Pillow>=10.0.0
+pillow-heif>=0.10.0
+
+# Theme Support (Optional but recommended)
+pyqtdarktheme>=2.1.0
+qt-material>=2.14

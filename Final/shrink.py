@@ -698,7 +698,7 @@ class ImageProcessorGUI(QMainWindow):
 def main():
     """Main function to run the application."""
     try:
-        from PIL import Image
+        import PIL.Image  # noqa: F401
     except ImportError:
         print("❌ PIL/Pillow not found. Installing...")
         import subprocess

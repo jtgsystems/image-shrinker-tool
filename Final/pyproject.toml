@@ -1,0 +1,129 @@
+[project]
+name = "enhanced-image-shrinker"
+version = "2.0.0"
+description = "A Professional Cross-Platform Image Compression Tool with Modern UI"
+authors = [
+    {name = "John Thomas Gallie", email = "contact@jtgsystems.com"}
+]
+readme = "README.md"
+license = {text = "MIT"}
+requires-python = ">=3.8"
+keywords = [
+    "image", "compression", "optimization", "resize", "gui",
+    "pyqt6", "webp", "jpeg", "batch-processing", "cross-platform"
+]
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Intended Audience :: End Users/Desktop",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Multimedia :: Graphics :: Graphics Conversion",
+    "Topic :: Multimedia :: Graphics",
+    "Environment :: X11 Applications :: Qt",
+]
+
+dependencies = [
+    "PyQt6>=6.4.0",
+    "Pillow>=10.0.0",
+    "pillow-heif>=0.10.0",
+    "pyqtdarktheme>=2.1.0",
+    "qt-material>=2.14",
+]
+
+[project.optional-dependencies]
+dev = [
+    "ruff>=0.14.0",
+    "mypy>=1.18.0",
+    "pytest>=8.4.0",
+    "pytest-cov>=7.0.0",
+    "pytest-mock>=3.14.0",
+]
+build = [
+    "PyInstaller>=5.13.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/jtgsystems/enhanced-image-shrinker"
+Repository = "https://github.com/jtgsystems/enhanced-image-shrinker"
+Issues = "https://github.com/jtgsystems/enhanced-image-shrinker/issues"
+
+[project.scripts]
+image-shrinker = "shrink:main"
+
+[build-system]
+requires = ["setuptools>=68.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+packages = ["shrink", "theme_manager"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py38"
+
+[tool.ruff.lint]
+select = [
+    "E",   # pycodestyle errors
+    "W",   # pycodestyle warnings
+    "F",   # pyflakes
+    "I",   # isort
+    "B",   # flake8-bugbear
+    "C4",  # flake8-comprehensions
+    "UP",  # pyupgrade
+    "ARG", # flake8-unused-arguments
+    "SIM", # flake8-simplify
+]
+ignore = [
+    "E501",  # line too long (handled by formatter)
+    "B008",  # do not perform function calls in argument defaults
+    "ARG001", # unused function argument
+    "ARG002", # unused method argument
+]
+
+[tool.ruff.lint.per-file-ignores]
+"tests/*" = ["ARG", "S101"]
+"shrink_fixed.py" = ["F403", "F405"]  # Legacy file with star imports
+
+[tool.mypy]
+python_version = "3.8"
+warn_return_any = true
+warn_unused_configs = true
+ignore_missing_imports = true
+no_implicit_optional = false
+
+[tool.pytest.ini_options]
+minversion = "8.0"
+addopts = "-ra -q --strict-markers --cov=. --cov-report=term-missing --cov-report=html"
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+python_classes = ["Test*"]
+python_functions = ["test_*"]
+
+[tool.coverage.run]
+source = ["."]
+omit = [
+    "tests/*",
+    "build/*",
+    "dist/*",
+    "*/__pycache__/*",
+    "*/venv/*",
+    "*/site-packages/*",
+]
+
+[tool.coverage.report]
+exclude_lines = [
+    "pragma: no cover",
+    "def __repr__",
+    "if __name__ == .__main__.:",
+    "raise AssertionError",
+    "raise NotImplementedError",
+    "if False:",
+    "if TYPE_CHECKING:",
+]

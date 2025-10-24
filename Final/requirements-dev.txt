@@ -1,0 +1,21 @@
+# Enhanced Image Shrinker - Development Dependencies
+# ===================================================
+# Additional dependencies for development, testing, and building
+
+# Include runtime dependencies
+-r requirements.txt
+
+# Code Quality Tools
+ruff>=0.14.0
+mypy>=1.18.0
+
+# Testing
+pytest>=8.4.0
+pytest-cov>=7.0.0
+pytest-mock>=3.14.0
+
+# Build Tools
+PyInstaller>=5.13.0
+
+# Optional: auto-py-to-exe for GUI build tool
+# auto-py-to-exe>=2.40.0

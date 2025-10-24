@@ -6,9 +6,7 @@ Integrates best PyQt6 styling libraries and custom themes
 """
 
 import sys
-import os
-from pathlib import Path
-from typing import Optional, Dict, Any
+from typing import Dict
 
 # Theme library availability flags
 THEMES_AVAILABLE = {
@@ -25,7 +23,7 @@ except ImportError:
     pass
 
 try:
-    from qt_material import apply_stylesheet, list_themes
+    from qt_material import apply_stylesheet
     THEMES_AVAILABLE['qt_material'] = True
 except ImportError:
     pass
@@ -492,15 +490,15 @@ class ThemeManager:
                 import subprocess
                 subprocess.check_call([sys.executable, "-m", "pip", "install", "pyqtdarktheme"])
                 results['qdarktheme'] = True
-            except:
+            except (subprocess.CalledProcessError, FileNotFoundError, ImportError):
                 results['qdarktheme'] = False
-        
+
         if not THEMES_AVAILABLE['qt_material']:
             try:
                 import subprocess
                 subprocess.check_call([sys.executable, "-m", "pip", "install", "qt-material"])
                 results['qt_material'] = True
-            except:
+            except (subprocess.CalledProcessError, FileNotFoundError, ImportError):
                 results['qt_material'] = False
         
         return results
