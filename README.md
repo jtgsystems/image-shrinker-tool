@@ -472,3 +472,23 @@ JTG Systems specializes in creating professional-grade software solutions with f
 
 *Enhanced Image Shrinker v2.0 - Professional image compression made simple*  
 *© 2025 John Thomas Gallie - JTG Systems*
+
+---
+
+## 🏆 Created by JTG Systems
+
+<div align="center">
+
+<a href="https://jtgsystems.com">
+  <img src="https://raw.githubusercontent.com/jtgsystems/.github/main/assets/jtgsystems-attribution-banner.jpg" alt="JTG Systems - Support & Sponsorship" width="750"/>
+</a>
+
+**Engineered with pride by [JTG Systems](https://jtgsystems.com)**  
+*Enterprise Systems Architecture, Custom Workstations & AI Solutions*
+
+🌐 **Website**: [jtgsystems.com](https://jtgsystems.com)  
+📞 **Contact**: (905) 892-4555  
+☕ **Tips & Sponsorship**: `jtgsystems@gmail.com`
+
+</div>
+
